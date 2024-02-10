@@ -1,0 +1,38 @@
+buildscript {
+    dependencies {
+        classpath 'org.flywaydb:flyway-gradle-plugin:8.1.0'
+    }
+}
+plugins {
+    id 'java'
+    id 'org.flywaydb.flyway' version '8.1.0'
+}
+flyway {
+    url = 'jdbc:postgresql://127.0.0.1:5432/java-dev-hw-13'
+    user = 'postgres'
+    password = 'sempai'
+    cleanDisabled = true
+    baselineOnMigrate = true
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.hibernate.orm:hibernate-core:6.1.0.Final'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.1'
+    implementation 'org.hibernate.orm:hibernate-core:6.1.0.Final'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '8.1.0'
+}
+
+test {
+    useJUnitPlatform()
+}
