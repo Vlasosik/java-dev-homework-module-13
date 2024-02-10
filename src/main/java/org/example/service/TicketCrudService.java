@@ -11,6 +11,9 @@ public class TicketCrudService {
     GenericDao<Planet> planetGenericDao = new GenericDao<>();
 
     public void create(Ticket ticket) {
+        if (ticket == null) {
+            throw new IllegalArgumentException("Квиток не може бути null");
+        }
         Client client = clientGenericDao.read(ticket.getClientId().getId(), Client.class);
         if (client == null) {
             throw new IllegalArgumentException("Клієнт з заданим ідентифікатором не існує");
