@@ -28,7 +28,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     implementation 'org.hibernate.orm:hibernate-core:6.1.0.Final'
-    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.1'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.2'
     implementation 'org.hibernate.orm:hibernate-core:6.1.0.Final'
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '8.1.0'
 }
